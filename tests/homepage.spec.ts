@@ -6,7 +6,7 @@ import { Credentials } from "../testData/loginData.json";
 test.beforeEach(async({page}) => {
     const loginPageobj = new loginPage(page);
     await loginPageobj.openApplication();
-     await loginPageobj.login(Credentials[0].username,Credentials[0].password,Credentials[0].captcha,Credentials[0].otp);
+    await loginPageobj.login(Credentials[0].username,Credentials[0].password,Credentials[0].captcha,Credentials[0].otp);
 
 });
 
