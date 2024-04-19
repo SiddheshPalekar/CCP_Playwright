@@ -1,6 +1,23 @@
 {
-    "username":"YATIN999",
-    "password":"Monday@123",
-    "captcha":"111111",
-    "otp":"000000"
+    "Credentials": [
+        {
+        "username":"YATIN999",
+        "password":"Monday@123",
+        "captcha":"111111",
+        "otp":"000000"
+        },
+        {
+        "username":"YATIN",
+        "password":"Monday@1",
+        "captcha":"111111",
+        "otp":"000000" 
+        }
+    ],
+    "errors": [
+        {
+        "invalid_login": "Invalid Credentials. Please Try Again!"
+        }
+    ]
 }
+
+

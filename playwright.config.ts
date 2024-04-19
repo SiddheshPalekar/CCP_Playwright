@@ -1,5 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 import path from 'path';
+
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -40,7 +41,7 @@ export default defineConfig({
   projects: [
     {
       name: 'setup',
-      testMatch: 'login.setup.ts',
+      testMatch: '**/*.setup.ts',
 
     },
     {
@@ -51,6 +52,14 @@ export default defineConfig({
         storageState: STORAGE_STATE,
       }
     },
+    {
+      name: 'login tests',
+      testMatch: 'loginpagevalidation.spec.ts',
+      // dependencies: ['setup'],
+      // use: {
+      //   storageState: STORAGE_STATE,
+      // }
+    },
     // {
     //   name: 'chromium',
     //   dependencies: ['setup'],
@@ -60,9 +69,10 @@ export default defineConfig({
     //     launchOptions: {
     //       args: ["--start-maximized", "--disable-extensions", "--disable-plugins"],
     //       headless: false,
-
+        
           
     //     },
+    //     storageState: STORAGE_STATE,
 
     //   },
     // },
