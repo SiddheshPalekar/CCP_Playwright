@@ -6,7 +6,7 @@ import data from "../testData/loginData.json"
 test.beforeEach(async({page}) => {
     const loginPageobj = new loginPage(page);
     await loginPageobj.openApplication();
-    // await loginPageobj.login(data.username,data.password,data.captcha,data.otp);
+    await loginPageobj.login(data.username,data.password,data.captcha,data.otp);
 });
 
 test('homepage validation',{tag:"@homepage"}, async({ page }) => {
