@@ -12,6 +12,7 @@
     "@types/node": "^20.12.7"
   },
   "dependencies": {
+    "convert-excel-to-json": "^1.7.0",
     "dotenv": "^16.4.5"
   }
 }
