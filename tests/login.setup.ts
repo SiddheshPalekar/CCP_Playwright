@@ -13,7 +13,6 @@ const data1 = Excelutils.getTestData(SHEET, "TC01_ValidLogin");
 
 
 
-
 setup(`${data1.TestID} - ${data1.Description}`,{tag:"@login"}, async ({page}) => {
     // Allure.attachDetails(data1.Description, data1.Issue);
     await home.openApplication();
