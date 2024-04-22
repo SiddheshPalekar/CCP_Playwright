@@ -1,7 +1,7 @@
 import excelToJson from "convert-excel-to-json";
 import ExcelConstants from "../Constants/ExcelConstants";
 
-export default class Excelutils {
+export default class ExcelUtil {
     public static getTestDataArray(sheet: string) {
         const result = excelToJson({
             sourceFile: ExcelConstants.TEST_PATH,

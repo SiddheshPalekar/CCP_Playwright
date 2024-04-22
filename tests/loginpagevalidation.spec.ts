@@ -1,7 +1,15 @@
 import { test, expect } from '@playwright/test';
 import { loginPage } from '../pages/loginPage';
 import { Credentials } from "../testData/loginData.json";
+import Excelutils  from "../utils/Excelutils.ts";
+// import Excelutils from "@utils/Excelutils";
 
+const SHEET = "LoginTest";
+let home: loginPage;
+test.beforeEach(async ({ page }) => {
+    home = new loginPage(page);
+});
+const data1 = Excelutils.getTestData(SHEET, "TC01_ValidLogin");
 
 test('validate back to login page button',{tag:"@back_button"}, async({ page }) => {
     const loginPageobj = new loginPage(page);
