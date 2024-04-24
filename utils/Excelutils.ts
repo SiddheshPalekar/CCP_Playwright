@@ -6,7 +6,7 @@ export default class ExcelUtil {
         const result = excelToJson({
             sourceFile: ExcelConstants.TEST_PATH,
             columnToKey: {
-                '*': '{{columnHeader}}',
+                '*' : '{{columnHeader}}',
             },
             sheetStubs: true,
             header: { rows: 1 },
@@ -19,7 +19,7 @@ export default class ExcelUtil {
         const result = excelToJson({
             sourceFile: ExcelConstants.SUITE_PATH,
             columnToKey: {
-                '*': '{{columnHeader}}',
+                '*' : '{{columnHeader}}',
             },
             sheetStubs: true,
             header: { rows: 1 },
@@ -46,7 +46,7 @@ export default class ExcelUtil {
         let found = false;
         let data;
         for (let i = 0; i < testData.length; i++) {
-            if (testData[i].TestID === testID) {
+            if (testData[i].TestCaseID === testID) {
                 data = testData[i];
                 found = true;
             }
