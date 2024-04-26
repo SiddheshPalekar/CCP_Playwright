@@ -6,7 +6,7 @@ import Excelutils  from "../utils/Excelutils.ts";
 
 test.beforeEach(async({page}) => {
     const loginPageobj = new loginPage(page);
-    await loginPageobj.openApplication();
+    // await loginPageobj.openApplication();
     await loginPageobj.login(Credentials[0].username,Credentials[0].password,Credentials[0].captcha);
 
 });

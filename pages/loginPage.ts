@@ -6,6 +6,7 @@ export class loginPage{
 
 
     readonly page : Page;
+    readonly alert : Locator;
     readonly usernameTextBox : Locator;
     readonly passwordTextBox : Locator;
     readonly captcha : Locator;
@@ -24,6 +25,7 @@ export class loginPage{
 
     constructor(page : Page){
         this.page                   = page;
+        this.alert                  = page.locator("//div[@role='alert']//p[@class='fs-7']");
         this.header                 = page.getByText("Login");
         this.captchref              = page.locator("id=reloadIcon");
         this.usernameTextBox        = page.locator("id=username");
@@ -41,10 +43,10 @@ export class loginPage{
         
     }
 
-    async openApplication():Promise<void>{
+    async openApplication(alertst : string):Promise<void>{
         await this.page.goto('/');
         await expect(this.page).toHaveTitle(/.*HDFC Corporate Credit Card Portal/);
-
+        await expect (this.alert).toHaveText(alertst);
 
     }
 
