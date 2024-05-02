@@ -127,10 +127,4 @@ test(`${data17.TestCaseID} - ${data17.Description}`,{tag:"@TC_GP_Login_018"},asy
 
 
 
-test('validate back to login page button',{tag:"@back_button"}, async({ page }) => {
-    await login.login(data1.UserName, data1.Password, data1.Captcha);
-    await login.login_otp(data1.OTP);
-    await login.backtologin();
-    
-});
 

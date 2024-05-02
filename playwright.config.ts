@@ -43,7 +43,7 @@ export default defineConfig({
       name: 'setup',
       testMatch: '**/*.setup.ts',
       use: { 
-        ...devices['Desktop Safari'],
+        ...devices['Desktop Chrome'],
         viewport: { width: 1500, height: 730 },
         video: {
           mode: 'on',
@@ -63,7 +63,7 @@ export default defineConfig({
     },
     {
       name: 'login tests',
-      testMatch: 'loginpagevalidation.spec.ts',
+      testMatch: '**/*.spec.ts',
       // dependencies: ['setup'],
       use: { 
         ...devices['Desktop Safari'],

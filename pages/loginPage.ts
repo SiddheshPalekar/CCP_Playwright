@@ -71,7 +71,7 @@ export class loginPage{
     }
 
     async invalidlogin_error_message(error : string): Promise<void>{
-        await expect.soft(this.error_msg).toContainText(error);
+        await expect.soft(this.error_msg).toHaveText(error);
         // await this.page.pause();
     }
 
@@ -102,7 +102,7 @@ export class loginPage{
     }
 
     async field_error_message(error : string) : Promise<void>{
-        await expect.soft(this.field_error_msg).toContainText(error);
+        await expect.soft(this.field_error_msg).toHaveText(error);
 
     }
 
@@ -131,18 +131,18 @@ export class loginPage{
     }
 
     async length_of_capchafield(maxlength_field : string, minlength_field : string) : Promise<void>{
-        const maxlength = await this.passwordTextBox.getAttribute('maxlength');
+        const maxlength = await this.captcha.getAttribute('maxlength');
         expect (maxlength).toBe(maxlength_field);
-        const minlength = await this.passwordTextBox.getAttribute('minlength');
+        const minlength = await this.captcha.getAttribute('minlength');
         expect (minlength).toBe(minlength_field);
     }
 
     async login_button_functionality() : Promise<void> {
         const inputUser = await this.usernameTextBox.inputValue();
         expect(inputUser).toBe('');
-        const inputPassword = await this.usernameTextBox.inputValue();
+        const inputPassword = await this.passwordTextBox.inputValue();
         expect(inputPassword).toBe('');
-        const inputCaptcha = await this.usernameTextBox.inputValue();
+        const inputCaptcha = await this.captcha.inputValue();
         expect(inputCaptcha).toBe('');
         await this.loginButton.isDisabled();
 
