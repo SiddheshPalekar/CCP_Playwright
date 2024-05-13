@@ -1,4 +1,5 @@
 import {Locator, Page, expect} from "@playwright/test"
+import { isAbsolute } from "node:path/win32";
 
 export class forgetPassword{
 
@@ -19,7 +20,14 @@ export class forgetPassword{
     readonly field_error_msg : Locator;
     readonly field_error_msg_1 :  Locator;
     readonly backtologinbtn : Locator;
-
+    readonly doitlaterbtn: Locator;
+    readonly loginbtn : Locator;
+    readonly reset_password : Locator;
+    readonly current_password : Locator;
+    readonly new_password : Locator;
+    readonly confirm_new_password : Locator;
+    readonly reset_password_btn  : Locator;
+    readonly alert : Locator;
     constructor(page : Page){
         this.page                 = page;
         this.forgetPasswordbutton = page.locator("//a[normalize-space()='Forgot Password ?']");
@@ -37,7 +45,15 @@ export class forgetPassword{
         this.field_error_msg      = page.locator("//div/span[@class='errorMessage']");
         this.field_error_msg_1    = page.locator("(//div/span[@class='errorMessage'])[2]");
         this.backtologinbtn       = page.locator("//a[normalize-space()='Back to Login']");
-        this.header               = page.getByText("Login");           
+        this.header               = page.getByText("Login");
+        this.doitlaterbtn         = page.locator("//button[@class='btn btn-primary btn-md noBorder w-auto']//div[text()='Do it Later']");  
+        this.loginbtn             = page.locator("//button[@class='btn btn-primary btn-md w-auto']//div[text()='Login']");   
+        this.reset_password       = page.getByText("Reset Password");
+        this.current_password     = page.locator("//input[@id='currentPassword']");
+        this.new_password         = page.locator("//input[@id='newPassword']");
+        this.confirm_new_password = page.locator("//input[@id='confirmNewPassword']");
+        this.reset_password_btn   = page.locator("//button[@id='changePasswordButton']");
+        this.alert                = page.locator("//div[@role='alert']//p[@class='fs-7']");
     }
 
     async forgetPasswordclick():Promise<void>{
@@ -127,4 +143,20 @@ export class forgetPassword{
         await expect(this.header).toBeVisible;
     }
     
+    async doitlaterfunctionality() : Promise<void>{
+        await this.doitlaterbtn.click();
+        await expect(this.forgetPasswordtitle).toBeVisible();
+    }
+
+    async loginafterforgetpw() : Promise<void>{
+        await this.loginbtn.click();
+        await this.alert.isVisible();
+    }
+    async resetpassword(currentpassword :string, newpassword : string, confirmpass : string ) : Promise<void>{
+        await this.current_password.click();
+        await this.current_password.fill(currentpassword);
+        await this.new_password.fill(newpassword);
+        await this.confirm_new_password.fill(confirmpass);
+        await this.reset_password_btn.click();
+    }
 }

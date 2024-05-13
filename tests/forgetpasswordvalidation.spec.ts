@@ -124,5 +124,25 @@ test(`${data16.TestCaseID} - ${data16.Description}`,{tag:"@TC_GP_ForgotPwd_16"},
     await forgetpw.backtologinfromforgetPassword();
 })
 
+const data17 = Excelutils.getTestData(SHEET,"TC_GP_ForgotPwd_17");
+test(`${data17.TestCaseID} - ${data17.Description}`,{tag:"@TC_GP_ForgotPwd_17"}, async ({}) => {
+    await forgetpw.forgetPasswordclick();
+    await forgetpw.forgetPassworddetails(data17.UserName ,data17.MobileNumber, data17.Captcha);
+    await forgetpw.doitlaterfunctionality();
+})
 
+const data18 = Excelutils.getTestData(SHEET,"TC_GP_ForgotPwd_18");
+test(`${data18.TestCaseID} - ${data18.Description}`,{tag:"@TC_GP_ForgotPwd_18"}, async ({}) => {
+    await forgetpw.forgetPasswordclick();
+    await forgetpw.forgetPassworddetails(data18.UserName ,data18.MobileNumber, data18.Captcha);
+    await forgetpw.loginafterforgetpw();
+})
 
+const data19 = Excelutils.getTestData(SHEET,"TC_GP_ForgotPwd_19");
+test(`${data19.TestCaseID} - ${data19.Description}`,{tag:"@TC_GP_ForgotPwd_19"}, async ({}) => {
+    await forgetpw.forgetPasswordclick();
+    await forgetpw.forgetPassworddetails(data19.UserName ,data19.MobileNumber, data19.Captcha);
+    await forgetpw.loginafterforgetpw();
+    await login.login(data19.UserName, data19.CurrentPassword, data19.Captcha);
+    await forgetpw.resetpassword(data19.CurrentPassword ,data19.NewPassword, data19.ConfirmNewPassword);
+})
