@@ -1,0 +1,1269 @@
+
+Running 44 tests using 6 workers
+
+[1A[2K[1/44] [setup] › login.setup.ts:15:6 › Open Application
+[1A[2K[2/44] [login tests] › forgetpasswordvalidation.spec.ts:27:5 › TC_GP_ForgotPwd_02 - To verify functionality of Forgot Password with valid details and will sent to the sms on registred mobile number
+[1A[2K[3/44] [login tests] › forgetpasswordvalidation.spec.ts:34:5 › TC_GP_ForgotPwd_03 - To verify functionality of Forgot Password with Invalid Username; Invalid MobileNumber; Invalid Captcha
+[1A[2K[4/44] [login tests] › forgetpasswordvalidation.spec.ts:22:5 › TC_GP_ForgotPwd_01 - To verify link of 'Forgot Password' on Login Page is working and redirected to Forgot Password page
+[1A[2K[5/44] [login tests] › forgetpasswordvalidation.spec.ts:48:5 › TC_GP_ForgotPwd_05 - To verify functionality of Forgot Password with Valid Username; Invalid MobileNumber; Valid Captcha
+[1A[2K[6/44] [login tests] › forgetpasswordvalidation.spec.ts:41:5 › TC_GP_ForgotPwd_04 - To verify functionality of Forgot Password with Invalid Username; Valid MobileNumber; Valid Captcha
+[1A[2K[7/44] [login tests] › forgetpasswordvalidation.spec.ts:55:5 › TC_GP_ForgotPwd_06 - To verify functionality of Forgot Password with Valid Username; Valid MobileNumber; Invalid Captcha
+[1A[2K  1) [login tests] › forgetpasswordvalidation.spec.ts:27:5 › TC_GP_ForgotPwd_02 - To verify functionality of Forgot Password with valid details and will sent to the sms on registred mobile number 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"Login via Temporary Password"[39m
+    Received: [31m""[39m
+
+       at ..\pages\forgetPassword.ts:76
+
+      74 |     async temporaryPasswordtemplate(tmpPassMsg : string ) :Promise<void> {
+      75 |         await this.tmpPassword.isVisible();
+    > 76 |         const popup_msg = await this.tmpPassword.textContent();
+         |                                  ^
+      77 |         expect (popup_msg).toBe(tmpPassMsg);
+      78 |     }
+      79 |
+
+        at forgetPassword.temporaryPasswordtemplate (D:\Automation\Credit_Card_Portal\pages\forgetPassword.ts:76:34)
+        at D:\Automation\Credit_Card_Portal\tests\forgetpasswordvalidation.spec.ts:30:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-9cbb0--on-registred-mobile-number-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-9cbb0--on-registred-mobile-number-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\forgetpasswordvalidation-T-9cbb0--on-registred-mobile-number-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K[8/44] [login tests] › forgetpasswordvalidation.spec.ts:62:5 › TC_GP_ForgotPwd_07 - To verify functionality of Forgot Password with Valid Username; Invalid MobileNumber; Invalid Captcha
+[1A[2K[9/44] [login tests] › forgetpasswordvalidation.spec.ts:69:5 › TC_GP_ForgotPwd_08 - To verify functionality of Forgot Password with Invalid Username; Valid MobileNumber; Invalid Captcha
+[1A[2K  2) [login tests] › forgetpasswordvalidation.spec.ts:41:5 › TC_GP_ForgotPwd_04 - To verify functionality of Forgot Password with Invalid Username; Valid MobileNumber; Valid Captcha 
+
+    Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m
+
+    Locator: locator('//div[@class=\'alert alert-danger mt-5\']')
+    Expected string: [32m"[7mInvalid Mobile Number or Username[27m. Please Try Again!"[39m
+    Received string: [31m"[7mSomething Went wrong[27m. Please Try Again!"[39m
+    Call log:
+      [2m- expect.soft.toHaveText with timeout 10000ms[22m
+    [2m  - waiting for locator('//div[@class=\'alert alert-danger mt-5\']')[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+
+
+       at ..\pages\forgetPassword.ts:79
+
+      77 |         expect (popup_msg).toBe(tmpPassMsg);
+      78 |     }
+    > 79 |
+         | ^
+      80 |     async invalidDetailsError(error : string) :Promise<void> {
+      81 |         await expect.soft(this.error_msg).toHaveText(error);
+      82 |     }
+
+        at forgetPassword.invalidDetailsError (D:\Automation\Credit_Card_Portal\pages\forgetPassword.ts:79:45)
+        at D:\Automation\Credit_Card_Portal\tests\forgetpasswordvalidation.spec.ts:44:20
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-2a5b1--MobileNumber-Valid-Captcha-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-2a5b1--MobileNumber-Valid-Captcha-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\forgetpasswordvalidation-T-2a5b1--MobileNumber-Valid-Captcha-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K  3) [login tests] › forgetpasswordvalidation.spec.ts:34:5 › TC_GP_ForgotPwd_03 - To verify functionality of Forgot Password with Invalid Username; Invalid MobileNumber; Invalid Captcha 
+
+    Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m
+
+    Locator: locator('//div[@class=\'alert alert-danger mt-5\']')
+    Expected string: [32m"[7mInvalid Captcha[27m. Please Try Again!"[39m
+    Received string: [31m"[7mSomething Went wrong[27m. Please Try Again!"[39m
+    Call log:
+      [2m- expect.soft.toHaveText with timeout 10000ms[22m
+    [2m  - waiting for locator('//div[@class=\'alert alert-danger mt-5\']')[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+
+
+       at ..\pages\forgetPassword.ts:79
+
+      77 |         expect (popup_msg).toBe(tmpPassMsg);
+      78 |     }
+    > 79 |
+         | ^
+      80 |     async invalidDetailsError(error : string) :Promise<void> {
+      81 |         await expect.soft(this.error_msg).toHaveText(error);
+      82 |     }
+
+        at forgetPassword.invalidDetailsError (D:\Automation\Credit_Card_Portal\pages\forgetPassword.ts:79:45)
+        at D:\Automation\Credit_Card_Portal\tests\forgetpasswordvalidation.spec.ts:37:20
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-46861-obileNumber-Invalid-Captcha-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-46861-obileNumber-Invalid-Captcha-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\forgetpasswordvalidation-T-46861-obileNumber-Invalid-Captcha-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K  4) [login tests] › forgetpasswordvalidation.spec.ts:48:5 › TC_GP_ForgotPwd_05 - To verify functionality of Forgot Password with Valid Username; Invalid MobileNumber; Valid Captcha 
+
+    Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m
+
+    Locator: locator('//div[@class=\'alert alert-danger mt-5\']')
+    Expected string: [32m"[7mInvalid Mobile Number or Username[27m. Please Try Again!"[39m
+    Received string: [31m"[7mSomething Went wrong[27m. Please Try Again!"[39m
+    Call log:
+      [2m- expect.soft.toHaveText with timeout 10000ms[22m
+    [2m  - waiting for locator('//div[@class=\'alert alert-danger mt-5\']')[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+
+
+       at ..\pages\forgetPassword.ts:79
+
+      77 |         expect (popup_msg).toBe(tmpPassMsg);
+      78 |     }
+    > 79 |
+         | ^
+      80 |     async invalidDetailsError(error : string) :Promise<void> {
+      81 |         await expect.soft(this.error_msg).toHaveText(error);
+      82 |     }
+
+        at forgetPassword.invalidDetailsError (D:\Automation\Credit_Card_Portal\pages\forgetPassword.ts:79:45)
+        at D:\Automation\Credit_Card_Portal\tests\forgetpasswordvalidation.spec.ts:51:20
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-886d1--MobileNumber-Valid-Captcha-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-886d1--MobileNumber-Valid-Captcha-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\forgetpasswordvalidation-T-886d1--MobileNumber-Valid-Captcha-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K  5) [login tests] › forgetpasswordvalidation.spec.ts:55:5 › TC_GP_ForgotPwd_06 - To verify functionality of Forgot Password with Valid Username; Valid MobileNumber; Invalid Captcha 
+
+    Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m
+
+    Locator: locator('//div[@class=\'alert alert-danger mt-5\']')
+    Expected string: [32m"[7mInvalid Captcha[27m. Please Try Again!"[39m
+    Received string: [31m"[7mSomething Went wrong[27m. Please Try Again!"[39m
+    Call log:
+      [2m- expect.soft.toHaveText with timeout 10000ms[22m
+    [2m  - waiting for locator('//div[@class=\'alert alert-danger mt-5\']')[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+
+
+       at ..\pages\forgetPassword.ts:79
+
+      77 |         expect (popup_msg).toBe(tmpPassMsg);
+      78 |     }
+    > 79 |
+         | ^
+      80 |     async invalidDetailsError(error : string) :Promise<void> {
+      81 |         await expect.soft(this.error_msg).toHaveText(error);
+      82 |     }
+
+        at forgetPassword.invalidDetailsError (D:\Automation\Credit_Card_Portal\pages\forgetPassword.ts:79:45)
+        at D:\Automation\Credit_Card_Portal\tests\forgetpasswordvalidation.spec.ts:58:20
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-72b61-obileNumber-Invalid-Captcha-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-72b61-obileNumber-Invalid-Captcha-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\forgetpasswordvalidation-T-72b61-obileNumber-Invalid-Captcha-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K[10/44] [login tests] › forgetpasswordvalidation.spec.ts:76:5 › TC_GP_ForgotPwd_09 - To verify functionality of Forgot Password with Invalid Username; Invalid MobileNumber; Valid Captcha
+[1A[2K[11/44] [login tests] › forgetpasswordvalidation.spec.ts:83:5 › TC_GP_ForgotPwd_10 - To verify “X” functionality to clear Username and MobileNumber field
+[1A[2K[12/44] [login tests] › forgetpasswordvalidation.spec.ts:89:5 › TC_GP_ForgotPwd_11 - To Verify functionality of  Reload Captcha
+[1A[2K[13/44] [login tests] › forgetpasswordvalidation.spec.ts:96:5 › TC_GP_ForgotPwd_12 - To verify functionality of  Validation Message of Username
+[1A[2K  6) [login tests] › forgetpasswordvalidation.spec.ts:62:5 › TC_GP_ForgotPwd_07 - To verify functionality of Forgot Password with Valid Username; Invalid MobileNumber; Invalid Captcha 
+
+    Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m
+
+    Locator: locator('//div[@class=\'alert alert-danger mt-5\']')
+    Expected string: [32m"[7mInvalid Captcha[27m. Please Try Again!"[39m
+    Received string: [31m"[7mSomething Went wrong[27m. Please Try Again!"[39m
+    Call log:
+      [2m- expect.soft.toHaveText with timeout 10000ms[22m
+    [2m  - waiting for locator('//div[@class=\'alert alert-danger mt-5\']')[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+
+
+       at ..\pages\forgetPassword.ts:79
+
+      77 |         expect (popup_msg).toBe(tmpPassMsg);
+      78 |     }
+    > 79 |
+         | ^
+      80 |     async invalidDetailsError(error : string) :Promise<void> {
+      81 |         await expect.soft(this.error_msg).toHaveText(error);
+      82 |     }
+
+        at forgetPassword.invalidDetailsError (D:\Automation\Credit_Card_Portal\pages\forgetPassword.ts:79:45)
+        at D:\Automation\Credit_Card_Portal\tests\forgetpasswordvalidation.spec.ts:65:20
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-b5f7c-obileNumber-Invalid-Captcha-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-b5f7c-obileNumber-Invalid-Captcha-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\forgetpasswordvalidation-T-b5f7c-obileNumber-Invalid-Captcha-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K  7) [login tests] › forgetpasswordvalidation.spec.ts:69:5 › TC_GP_ForgotPwd_08 - To verify functionality of Forgot Password with Invalid Username; Valid MobileNumber; Invalid Captcha 
+
+    Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m
+
+    Locator: locator('//div[@class=\'alert alert-danger mt-5\']')
+    Expected string: [32m"[7mInvalid Captcha[27m. Please Try Again!"[39m
+    Received string: [31m"[7mSomething Went wrong[27m. Please Try Again!"[39m
+    Call log:
+      [2m- expect.soft.toHaveText with timeout 10000ms[22m
+    [2m  - waiting for locator('//div[@class=\'alert alert-danger mt-5\']')[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+
+
+       at ..\pages\forgetPassword.ts:79
+
+      77 |         expect (popup_msg).toBe(tmpPassMsg);
+      78 |     }
+    > 79 |
+         | ^
+      80 |     async invalidDetailsError(error : string) :Promise<void> {
+      81 |         await expect.soft(this.error_msg).toHaveText(error);
+      82 |     }
+
+        at forgetPassword.invalidDetailsError (D:\Automation\Credit_Card_Portal\pages\forgetPassword.ts:79:45)
+        at D:\Automation\Credit_Card_Portal\tests\forgetpasswordvalidation.spec.ts:72:20
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-bf1e3-obileNumber-Invalid-Captcha-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-bf1e3-obileNumber-Invalid-Captcha-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\forgetpasswordvalidation-T-bf1e3-obileNumber-Invalid-Captcha-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K[14/44] [login tests] › forgetpasswordvalidation.spec.ts:116:5 › TC_GP_ForgotPwd_15 - To Verify Disabled Submit button for Empty Fields
+[1A[2K  8) [login tests] › forgetpasswordvalidation.spec.ts:89:5 › TC_GP_ForgotPwd_11 - To Verify functionality of  Reload Captcha 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mnot[2m.[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: not [32m""[39m
+
+       at ..\pages\forgetPassword.ts:97
+
+       95 |
+       96 |     async validate_refresh_captcha() : Promise<void> {
+    >  97 |         const captcha1 = await this.captch_img.getAttribute('src');
+          |                                     ^
+       98 |         await this.page.waitForTimeout(3000);
+       99 |         await this.reload_captcha.click();       
+      100 |         const captcha2 = await this.captch_img.getAttribute('src');
+
+        at forgetPassword.validate_refresh_captcha (D:\Automation\Credit_Card_Portal\pages\forgetPassword.ts:97:37)
+        at D:\Automation\Credit_Card_Portal\tests\forgetpasswordvalidation.spec.ts:91:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-02915-tionality-of-Reload-Captcha-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-02915-tionality-of-Reload-Captcha-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\forgetpasswordvalidation-T-02915-tionality-of-Reload-Captcha-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K[15/44] [login tests] › forgetpasswordvalidation.spec.ts:128:5 › TC_GP_ForgotPwd_17 - To Verify Do it later button on Login via temporary prompt window
+[1A[2K[16/44] [login tests] › forgetpasswordvalidation.spec.ts:135:5 › TC_GP_ForgotPwd_18 - To Verify Login button on Login via temporary prompt Window
+[1A[2K[17/44] [login tests] › forgetpasswordvalidation.spec.ts:103:5 › TC_GP_ForgotPwd_13 - To verify functionality of  Validation Message of Mobile Number
+[1A[2K[18/44] [login tests] › forgetpasswordvalidation.spec.ts:110:5 › TC_GP_ForgotPwd_14 - To verify functionality of  Validation Message of Captcha
+[1A[2K  9) [login tests] › forgetpasswordvalidation.spec.ts:76:5 › TC_GP_ForgotPwd_09 - To verify functionality of Forgot Password with Invalid Username; Invalid MobileNumber; Valid Captcha 
+
+    Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m
+
+    Locator: locator('//div[@class=\'alert alert-danger mt-5\']')
+    Expected string: [32m"[7mInvalid Mobile Number or Username[27m. Please Try Again!"[39m
+    Received string: [31m"[7mSomething Went wrong[27m. Please Try Again!"[39m
+    Call log:
+      [2m- expect.soft.toHaveText with timeout 10000ms[22m
+    [2m  - waiting for locator('//div[@class=\'alert alert-danger mt-5\']')[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+    [2m  -   locator resolved to <div role="alert" aria-live="polite" aria-atomic="tru…>…</div>[22m
+    [2m  -   unexpected value "Something Went wrong. Please Try Again!"[22m
+
+
+       at ..\pages\forgetPassword.ts:79
+
+      77 |         expect (popup_msg).toBe(tmpPassMsg);
+      78 |     }
+    > 79 |
+         | ^
+      80 |     async invalidDetailsError(error : string) :Promise<void> {
+      81 |         await expect.soft(this.error_msg).toHaveText(error);
+      82 |     }
+
+        at forgetPassword.invalidDetailsError (D:\Automation\Credit_Card_Portal\pages\forgetPassword.ts:79:45)
+        at D:\Automation\Credit_Card_Portal\tests\forgetpasswordvalidation.spec.ts:79:20
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-d74b8--MobileNumber-Valid-Captcha-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-d74b8--MobileNumber-Valid-Captcha-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\forgetpasswordvalidation-T-d74b8--MobileNumber-Valid-Captcha-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K[19/44] [login tests] › forgetpasswordvalidation.spec.ts:122:5 › TC_GP_ForgotPwd_16 - To Verify Back to login button redirects correctly to login page
+[1A[2K[20/44] [login tests] › homepage.spec.ts:18:5 › homepage validation
+[1A[2K[21/44] [login tests] › loginpagevalidation.spec.ts:17:5 › TC_GP_Login_002 - Verify User is able to login with CORRECT User Id and Password
+[1A[2K[22/44] [login tests] › loginpagevalidation.spec.ts:23:5 › TC_GP_Login_003 - Verify User is NOT able to login with INVALID User Id ,Password and Captcha
+[1A[2K[23/44] [login tests] › forgetpasswordvalidation.spec.ts:142:5 › TC_GP_ForgotPwd_19 - To Verify Reset Password Page after Forget Password
+[1A[2K  10) [login tests] › forgetpasswordvalidation.spec.ts:128:5 › TC_GP_ForgotPwd_17 - To Verify Do it later button on Login via temporary prompt window 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      [2m- waiting for locator('//button[@class=\'btn btn-primary btn-md noBorder w-auto\']//div[text()=\'Do it Later\']')[22m
+    [2m  -   locator resolved to <div class="btn-content">Do it Later</div>[22m
+    [2m  - attempting click action[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #1[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #2[22m
+    [2m  -   waiting 20ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #3[22m
+    [2m  -   waiting 100ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #4[22m
+    [2m  -   waiting 100ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #5[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #6[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #7[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #8[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #9[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #10[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #11[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #12[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #13[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #14[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #15[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #16[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #17[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #18[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #19[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #20[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #21[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #22[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #23[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #24[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #25[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #26[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #27[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #28[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #29[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #30[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #31[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #32[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #33[22m
+    [2m  -   waiting 500ms[22m
+
+
+       at ..\pages\forgetPassword.ts:136
+
+      134 |         const inputCaptcha = await this.captcha.inputValue();
+      135 |         expect(inputCaptcha).toBe('');
+    > 136 |         await expect(this.submitbtn).toBeDisabled();
+          |                             ^
+      137 |
+      138 |     }
+      139 |
+
+        at forgetPassword.doitlaterfunctionality (D:\Automation\Credit_Card_Portal\pages\forgetPassword.ts:136:29)
+        at D:\Automation\Credit_Card_Portal\tests\forgetpasswordvalidation.spec.ts:131:20
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-ec15e-via-temporary-prompt-window-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-ec15e-via-temporary-prompt-window-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\forgetpasswordvalidation-T-ec15e-via-temporary-prompt-window-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K  11) [login tests] › forgetpasswordvalidation.spec.ts:135:5 › TC_GP_ForgotPwd_18 - To Verify Login button on Login via temporary prompt Window 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      [2m- waiting for locator('//button[@class=\'btn btn-primary btn-md w-auto\']//div[text()=\'Login\']')[22m
+    [2m  -   locator resolved to <div class="btn-content">Login</div>[22m
+    [2m  - attempting click action[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #1[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #2[22m
+    [2m  -   waiting 20ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #3[22m
+    [2m  -   waiting 100ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #4[22m
+    [2m  -   waiting 100ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #5[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #6[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #7[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #8[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #9[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #10[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #11[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #12[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #13[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #14[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #15[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #16[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #17[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #18[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #19[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #20[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #21[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #22[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #23[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #24[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #25[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #26[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #27[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #28[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #29[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #30[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #31[22m
+    [2m  -   waiting 500ms[22m
+
+
+       at ..\pages\forgetPassword.ts:140
+
+      138 |     }
+      139 |
+    > 140 |     async backtologinfromforgetPassword() : Promise<void>{
+          |                         ^
+      141 |         await expect(this.backtologinbtn).toBeEnabled();
+      142 |         await this.backtologinbtn.click();
+      143 |         await expect(this.header).toBeVisible;
+
+        at forgetPassword.loginafterforgetpw (D:\Automation\Credit_Card_Portal\pages\forgetPassword.ts:140:25)
+        at D:\Automation\Credit_Card_Portal\tests\forgetpasswordvalidation.spec.ts:138:20
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-5b1f1-via-temporary-prompt-Window-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-5b1f1-via-temporary-prompt-Window-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\forgetpasswordvalidation-T-5b1f1-via-temporary-prompt-Window-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K  12) [login tests] › loginpagevalidation.spec.ts:23:5 › TC_GP_Login_003 - Verify User is NOT able to login with INVALID User Id ,Password and Captcha 
+
+    Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m
+
+    Locator: locator('//div[@class=\'alert alert-danger\']')
+    Expected string: [32m"Invalid captcha. Please Try Again!"[39m
+    Received string: [31m""[39m
+    Call log:
+      [2m- expect.soft.toHaveText with timeout 10000ms[22m
+    [2m  - waiting for locator('//div[@class=\'alert alert-danger\']')[22m
+
+
+       at ..\pages\loginPage.ts:74
+
+      72 |
+      73 |     async invalidlogin_error_message(error : string): Promise<void>{
+    > 74 |         await expect.soft(this.error_msg).toHaveText(error);
+         |                                           ^
+      75 |         // await this.page.pause();
+      76 |     }
+      77 |
+
+        at loginPage.invalidlogin_error_message (D:\Automation\Credit_Card_Portal\pages\loginPage.ts:74:43)
+        at D:\Automation\Credit_Card_Portal\tests\loginpagevalidation.spec.ts:25:17
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\loginpagevalidation-TC-GP--df52e-ser-Id-Password-and-Captcha-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\loginpagevalidation-TC-GP--df52e-ser-Id-Password-and-Captcha-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\loginpagevalidation-TC-GP--df52e-ser-Id-Password-and-Captcha-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K[24/44] [login tests] › loginpagevalidation.spec.ts:30:5 › TC_GP_Login_004 - Verify User is NOT able to login with INVALID User Id ,Password and  Valid Captcha
+[1A[2K[25/44] [login tests] › loginpagevalidation.spec.ts:37:5 › TC_GP_Login_005 - Verify User is NOT able to login with INVALID User Id ,Captcha and  Valid Password
+[1A[2K  13) [login tests] › homepage.spec.ts:18:5 › homepage validation ──────────────────────────────────
+
+    [31mTest timeout of 30000ms exceeded while running "beforeEach" hook.[39m
+
+       5 | import Excelutils  from "../utils/Excelutils.ts";
+       6 |
+    >  7 | test.beforeEach(async({page}) => {
+         |      ^
+       8 |     const loginPageobj = new loginPage(page);
+       9 |     // await loginPageobj.openApplication();
+      10 |     await loginPageobj.login(Credentials[0].username,Credentials[0].password,Credentials[0].captcha);
+
+        at D:\Automation\Credit_Card_Portal\tests\homepage.spec.ts:7:6
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      [2m- waiting for locator('id=username')[22m
+
+
+       at ..\pages\loginPage.ts:54
+
+      52 |
+      53 |     async login(usernameVal : string , passwordVal : string , captchaVal : string ): Promise<void>{
+    > 54 |         await this.usernameTextBox.click();       
+         |                                    ^
+      55 |         await this.usernameTextBox.fill(usernameVal);
+      56 |         await this.passwordTextBox.fill(passwordVal);
+      57 |         await this.captcha.fill(captchaVal);
+
+        at loginPage.login (D:\Automation\Credit_Card_Portal\pages\loginPage.ts:54:36)
+        at D:\Automation\Credit_Card_Portal\tests\homepage.spec.ts:10:24
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\homepage-homepage-validation-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\homepage-homepage-validation-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\homepage-homepage-validation-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K  14) [login tests] › loginpagevalidation.spec.ts:17:5 › TC_GP_Login_002 - Verify User is able to login with CORRECT User Id and Password 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      [2m- waiting for locator('id=otp')[22m
+
+
+       at ..\pages\loginPage.ts:63
+
+      61 |
+      62 |     async login_otp(otpVal : string ): Promise<void>{
+    > 63 |         await this.otp.fill(otpVal);
+         |                        ^
+      64 |         await this.submitOtp.click();
+      65 |     }
+      66 |
+
+        at loginPage.login_otp (D:\Automation\Credit_Card_Portal\pages\loginPage.ts:63:24)
+        at D:\Automation\Credit_Card_Portal\tests\loginpagevalidation.spec.ts:19:17
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\loginpagevalidation-TC-GP--c04d9-ORRECT-User-Id-and-Password-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\loginpagevalidation-TC-GP--c04d9-ORRECT-User-Id-and-Password-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\loginpagevalidation-TC-GP--c04d9-ORRECT-User-Id-and-Password-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K[26/44] [login tests] › loginpagevalidation.spec.ts:44:5 › TC_GP_Login_006 - Verify User is NOT able to login with INVALID User Id and  Valid Password,captcha
+[1A[2K  15) [login tests] › forgetpasswordvalidation.spec.ts:142:5 › TC_GP_ForgotPwd_19 - To Verify Reset Password Page after Forget Password 
+
+    [31mTest timeout of 30000ms exceeded.[39m
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      [2m- waiting for locator('//button[@class=\'btn btn-primary btn-md w-auto\']//div[text()=\'Login\']')[22m
+    [2m  -   locator resolved to <div class="btn-content">Login</div>[22m
+    [2m  - attempting click action[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #1[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #2[22m
+    [2m  -   waiting 20ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #3[22m
+    [2m  -   waiting 100ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #4[22m
+    [2m  -   waiting 100ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #5[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #6[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #7[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #8[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #9[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #10[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #11[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #12[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #13[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #14[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #15[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #16[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #17[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #18[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #19[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #20[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #21[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #22[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #23[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #24[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #25[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #26[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #27[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #28[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #29[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #30[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #31[22m
+    [2m  -   waiting 500ms[22m
+    [2m  -   waiting for element to be visible, enabled and stable[22m
+    [2m  -   element is not visible[22m
+    [2m  - retrying click action, attempt #32[22m
+    [2m  -   waiting 500ms[22m
+
+
+       at ..\pages\forgetPassword.ts:140
+
+      138 |     }
+      139 |
+    > 140 |     async backtologinfromforgetPassword() : Promise<void>{
+          |                         ^
+      141 |         await expect(this.backtologinbtn).toBeEnabled();
+      142 |         await this.backtologinbtn.click();
+      143 |         await expect(this.header).toBeVisible;
+
+        at forgetPassword.loginafterforgetpw (D:\Automation\Credit_Card_Portal\pages\forgetPassword.ts:140:25)
+        at D:\Automation\Credit_Card_Portal\tests\forgetpasswordvalidation.spec.ts:145:20
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-29744--Page-after-Forget-Password-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\forgetpasswordvalidation-T-29744--Page-after-Forget-Password-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\forgetpasswordvalidation-T-29744--Page-after-Forget-Password-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K[27/44] [login tests] › loginpagevalidation.spec.ts:51:5 › TC_GP_Login_007 - Verify User is NOT able to login with VALID User Id and INVALID Password,captcha
+[1A[2K[28/44] [login tests] › loginpagevalidation.spec.ts:58:5 › TC_GP_Login_008 - Verify User is NOT able to login with VALID User Id,captcha and INVALID Password
+[1A[2K  16) [login tests] › loginpagevalidation.spec.ts:30:5 › TC_GP_Login_004 - Verify User is NOT able to login with INVALID User Id ,Password and  Valid Captcha 
+
+    Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m
+
+    Locator: locator('//div[@class=\'alert alert-danger\']')
+    Expected string: [32m"Invalid credentials. Remaining attempts"[39m
+    Received string: [31m""[39m
+    Call log:
+      [2m- expect.soft.toHaveText with timeout 10000ms[22m
+    [2m  - waiting for locator('//div[@class=\'alert alert-danger\']')[22m
+
+
+       at ..\pages\loginPage.ts:74
+
+      72 |
+      73 |     async invalidlogin_error_message(error : string): Promise<void>{
+    > 74 |         await expect.soft(this.error_msg).toHaveText(error);
+         |                                           ^
+      75 |         // await this.page.pause();
+      76 |     }
+      77 |
+
+        at loginPage.invalidlogin_error_message (D:\Automation\Credit_Card_Portal\pages\loginPage.ts:74:43)
+        at D:\Automation\Credit_Card_Portal\tests\loginpagevalidation.spec.ts:32:17
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\loginpagevalidation-TC-GP--8cfd1--Password-and-Valid-Captcha-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\loginpagevalidation-TC-GP--8cfd1--Password-and-Valid-Captcha-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\loginpagevalidation-TC-GP--8cfd1--Password-and-Valid-Captcha-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K  17) [login tests] › loginpagevalidation.spec.ts:37:5 › TC_GP_Login_005 - Verify User is NOT able to login with INVALID User Id ,Captcha and  Valid Password 
+
+    Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m
+
+    Locator: locator('//div[@class=\'alert alert-danger\']')
+    Expected string: [32m"Invalid captcha. Please Try Again!"[39m
+    Received string: [31m""[39m
+    Call log:
+      [2m- expect.soft.toHaveText with timeout 10000ms[22m
+    [2m  - waiting for locator('//div[@class=\'alert alert-danger\']')[22m
+
+
+       at ..\pages\loginPage.ts:74
+
+      72 |
+      73 |     async invalidlogin_error_message(error : string): Promise<void>{
+    > 74 |         await expect.soft(this.error_msg).toHaveText(error);
+         |                                           ^
+      75 |         // await this.page.pause();
+      76 |     }
+      77 |
+
+        at loginPage.invalidlogin_error_message (D:\Automation\Credit_Card_Portal\pages\loginPage.ts:74:43)
+        at D:\Automation\Credit_Card_Portal\tests\loginpagevalidation.spec.ts:39:17
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\loginpagevalidation-TC-GP--8bfc8--Captcha-and-Valid-Password-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\loginpagevalidation-TC-GP--8bfc8--Captcha-and-Valid-Password-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\loginpagevalidation-TC-GP--8bfc8--Captcha-and-Valid-Password-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K  18) [login tests] › loginpagevalidation.spec.ts:44:5 › TC_GP_Login_006 - Verify User is NOT able to login with INVALID User Id and  Valid Password,captcha 
+
+    Error: [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m
+
+    Locator: locator('//div[@class=\'alert alert-danger\']')
+    Expected string: [32m"Invalid credentials. Remaining attempts"[39m
+    Received string: [31m""[39m
+    Call log:
+      [2m- expect.soft.toHaveText with timeout 10000ms[22m
+    [2m  - waiting for locator('//div[@class=\'alert alert-danger\']')[22m
+
+
+       at ..\pages\loginPage.ts:74
+
+      72 |
+      73 |     async invalidlogin_error_message(error : string): Promise<void>{
+    > 74 |         await expect.soft(this.error_msg).toHaveText(error);
+         |                                           ^
+      75 |         // await this.page.pause();
+      76 |     }
+      77 |
+
+        at loginPage.invalidlogin_error_message (D:\Automation\Credit_Card_Portal\pages\loginPage.ts:74:43)
+        at D:\Automation\Credit_Card_Portal\tests\loginpagevalidation.spec.ts:46:17
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\loginpagevalidation-TC-GP--d5523--and-Valid-Password-captcha-login-tests\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\loginpagevalidation-TC-GP--d5523--and-Valid-Password-captcha-login-tests\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\loginpagevalidation-TC-GP--d5523--and-Valid-Password-captcha-login-tests\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+[1A[2K[29/44] [login tests] › loginpagevalidation.spec.ts:65:5 › TC_GP_Login_009 - Verify User is NOT able to login with VALID User Id,password and INVALID captcha

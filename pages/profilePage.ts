@@ -2,6 +2,8 @@ import {Locator, Page, expect} from "@playwright/test"
 import { errors } from "../testData/loginData.json";
 import faker from 'faker';
 import { deflateRawSync } from "zlib";
+import exp from "constants";
+import { loginPage } from "./loginPage";
 
 export class profilePage{
     readonly page : Page;
@@ -32,6 +34,9 @@ export class profilePage{
     readonly userid : Locator;
     readonly rolename: Locator;
     readonly status : Locator;
+    readonly errormsg : Locator;
+    readonly bankuserrole : Locator;
+    readonly superadminrole : Locator;
 
     constructor(page : Page) {
         this.page                  = page;
@@ -42,7 +47,8 @@ export class profilePage{
         this.personaldetails       = page.locator("//div[@class='Details']//h4[text()='Personal Details']")
         this.companydetails        = page.locator("//div[@class='Details']//h4[text()='Company Details']")
         this.resetpassword         = page.locator("//li[@class='nav-item']//button[text()='Reset Password']")
-        this.allusers              = page.locator("//li[@class='nav-item']//button//span[text()='All Users']")
+        // this.allusers              = page.locator("//li[@class='nav-item']//button//span[text()='All Users']")
+        this.allusers              = page.getByRole('tab', { name: 'All Users' })
         this.approvalStr           = page.locator("//li[@class='nav-item']//button[text()='Approval Structures']")
         this.selectdrop            = page.locator("//div[@class='checkbox-selects']//button[text()=' Open Custom Dropdown ']")
         this.selectdropmenu        = page.locator("//div[@class='custom-dropdown']")
@@ -50,7 +56,8 @@ export class profilePage{
         this.selectdropmenuuid     = page.locator("//div[@class='custom-dropdown']//div[text()='User ID']")
         this.search                = page.locator("//input[@id='search']")
         this.reset                 = page.locator("//span[@class='inputText text-primary me-2']");
-        this.filter                = page.locator("//div[@class='btn-content'][normalize-space()='Filter']");
+        // this.filter                = page.locator("//div[@class='btn-content'][normalize-space()='Filter']");
+        this.filter                = page.getByRole('button', { name: 'Filter' })
         this.filtermenu            = page.locator("//div[@class='noc-accord applyFilterDiv p-0']")
         this.filtermenurole        = page.locator("//div[@class='accordian-wrapper']//div//div[text()='Role']")
         this.filtermenustatus      = page.locator("//div[@class='accordian-wrapper']//div//div[text()='Status']")
@@ -62,7 +69,9 @@ export class profilePage{
         this.userid                = page.locator("(//div[@class='bottomData']//p[@class='text-nutralGray fs-8 fw-semibold'])[2]")
         this.rolename              = page.locator("(//div[@class='bottomData']//p[@class='text-nutralGray fs-8 fw-semibold'])[1]")
         this.status                = page.locator("(//div[@class='card-body']//span[@class='badge chips chip-success'])[1]")
-
+        this.errormsg              = page.locator("//div[@class='col-auto text-danger fs-6']")
+        this.bankuserrole          = page.locator("//label[text()=' Bank User']//input[@type='checkbox']")
+        this.superadminrole        = page.locator("//label[text()=' Super Admin']//input[@type='checkbox']")
 
     }
 
@@ -109,9 +118,50 @@ export class profilePage{
         await this.page.waitForTimeout(5000);
         await expect(this.profilecard).toBeVisible();
         await expect(this.profilecard).toHaveCount(1);
-        const userid = await this.userid.inputValue();
+        const userid = await this.userid.textContent();
         expect(userid).toBe(useridval);
     }
+
+    async nouseridselection(useridval : string, error : string) : Promise<void> {
+        await this.allusers.click();
+        await this.search.fill(useridval);
+        await this.submit.click();
+        await this.page.waitForTimeout(5000);
+        expect(this.errormsg).toBe(error);
+
+    }
+
+    async resetsearch (useridval : string) : Promise<void>{
+        await this.allusers.click();
+        await this.search.fill(useridval);
+        await this.submit.isEnabled();
+        await this.reset.click();
+        await expect(this.submit).toBeEmpty();
+        await this.submit.isDisabled();
+    }
+
+    async chagefilterrole(rolename : string) : Promise<void>{
+        await this.allusers.click({delay : 3000});
+        await this.page.waitForTimeout(3000);
+        await this.filter.click();
+        // await expect(this.filtermenu).toBeVisible({timeout : 3000});
+        await this.filtermenurole.click();
+        await this.bankuserrole.click();
+        await this.applyfilter.click();
+        const role = await this.userid.textContent();
+        expect(role).toBe(rolename);    
+    }
+
+    async countelement() : Promise<void>{
+    const elementsCount = await this.profilecard.count();
+    for (var index= 0; index < elementsCount ; index++) {
+    const element = elementsCount[index];
+    console.log (element);
+    const innerText = await element.textContent();
+    }
+
+    }
+    
 
     async logout() : Promise<void>{
         await this.logouticon.click();

@@ -69,8 +69,8 @@ export default defineConfig({
       testMatch: '**/*.spec.ts',
       // dependencies: ['setup'],
       use: { 
-        ...devices['Desktop Safari'],
-        // ...devices['Desktop Chrome'],
+        // ...devices['Desktop Safari'],
+        ...devices['Desktop Chrome'],
         viewport: { width: 1500, height: 730 },
         video: {
           mode: 'on',

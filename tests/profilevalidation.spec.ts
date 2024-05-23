@@ -57,5 +57,17 @@ test(`${data4.TestCaseID} - ${data4.Description}`,{tag:"@TC_GP_Profile_04"}, asy
     await profile.iconprofile();
     await profile.viewprofile();
     await profile.useridselect(data4.UserId);
+
     
+});
+
+const data6 = Excelutils.getTestData(SHEET,"TC_GP_Profile_06");
+test(`${data6.TestCaseID} - ${data6.Description}`,{tag:"@TC_GP_Profile_06"}, async ({}) => {
+    await login.login(data6.UserName, data6.Password, data6.Captcha);
+    await login.login_otp(data6.OTP);
+    await profile.iconprofile();
+    await profile.viewprofile();
+    await profile.chagefilterrole(data6.Role);
+    await profile.countelement();
+   
 });

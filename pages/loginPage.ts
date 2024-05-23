@@ -54,6 +54,7 @@ export class loginPage{
         await this.usernameTextBox.click();       
         await this.usernameTextBox.fill(usernameVal);
         await this.passwordTextBox.fill(passwordVal);
+        await this.captchref.click();
         await this.captcha.fill(captchaVal);
         await this.loginButton.click();
         // await this.page.pause();
