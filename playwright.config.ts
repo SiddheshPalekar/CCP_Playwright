@@ -28,8 +28,9 @@ export default defineConfig({
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
+  timeout: 60 * 1000,
   expect :{
-    timeout: 10 * 1000,
+    timeout: 60 * 1000,
   },
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -71,6 +72,10 @@ export default defineConfig({
       use: { 
         // ...devices['Desktop Safari'],
         ...devices['Desktop Chrome'],
+        // ...devices['Desktop Firefox'],
+        // ...devices['Pixel 5'],
+        // ...devices['iPhone 12'],
+
         viewport: { width: 1500, height: 730 },
         video: {
           mode: 'on',

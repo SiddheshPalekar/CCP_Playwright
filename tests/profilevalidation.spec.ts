@@ -71,3 +71,12 @@ test(`${data6.TestCaseID} - ${data6.Description}`,{tag:"@TC_GP_Profile_06"}, asy
     await profile.countelement();
    
 });
+
+const data7 = Excelutils.getTestData(SHEET,"TC_GP_Profile_07");
+test(`${data7.TestCaseID} - ${data7.Description}`,{tag:"@TC_GP_Profile_07"}, async ({}) => {
+    await login.login(data7.UserName, data7.Password, data7.Captcha);
+    await login.login_otp(data7.OTP);
+    await profile.iconprofile();
+    await profile.logout();
+   
+});

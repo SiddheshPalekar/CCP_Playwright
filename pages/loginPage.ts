@@ -46,7 +46,8 @@ export class loginPage{
     async openApplication(alertst : string):Promise<void>{
         await this.page.goto('/');
         await expect(this.page).toHaveTitle(/.*HDFC Corporate Credit Card Portal/);
-        await expect (this.alert).toHaveText(alertst);
+        const alertext = await this.alert.textContent();
+        expect (alertext?.trim()).toBe(alertst);
 
     }
 
