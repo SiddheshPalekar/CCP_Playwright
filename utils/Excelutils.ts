@@ -57,5 +57,47 @@ export default class ExcelUtil {
         return data;
     }
 
-   
+    // public static runTestCasesWithMultipleData(sheet: string) {
+    //     const result = excelToJson({
+    //         sourceFile: ExcelConstants.TEST_PATH,
+    //         columnToKey: {
+    //             '*' : '{{columnHeader}}',
+    //         },
+    //         sheetStubs: true,
+    //         header: { rows: 1 },
+    //         sheets: [sheet],
+    //     });
+    //     const sheetData = result[sheet];
+    //     const testResults: any[] = [];
+    //     const testCases = sheetData.reduce((acc, row) => {
+    //         const testCaseID = row.TestCaseID;
+    //         if (testCaseID) {
+    //             if (!acc[testCaseID]) {
+    //                 acc[testCaseID] = [];
+    //             }
+    //             acc[testCaseID].push(row);
+    //         } else {
+    //             console.warn(`Row is missing a TestCaseID. Skipping...`);
+    //         }
+    //         return acc;
+    //     }, {} as Record<string, any[]>);
+    //     Object.keys(testCases).forEach((testCaseID) => {
+    //         const testDataSet = testCases[testCaseID];
+    //         console.log(`Running TestCaseID: ${testCaseID} with ${testDataSet.length} data sets`);
+    //         testDataSet.forEach((data, index) => {
+    //             const testResult = this.runTestCase(data);
+    //             testResults.push({
+    //                 TestCaseID: testCaseID,
+    //                 DataSetIndex: index + 1,
+    //                 Result: testResult,
+    //             });
+    //             console.log(`Test Case ${testCaseID} - DataSet ${index + 1}: ${testResult}`);
+    //         });
+    //     });
+    //     return testResults;
+    // }
+    // private static runTestCase(testCaseData: any): string {
+    //     console.log(`Executing test case: ${JSON.stringify(testCaseData)}`);
+    //     return "Passed";
+    // }
 }
