@@ -75,7 +75,12 @@ export class bankUser{
     readonly workflow : Locator;
     readonly togglebtn : Locator;
     readonly togglebtntext : Locator;
-
+    readonly approvalrole : Locator;
+    readonly addapproverole : Locator;
+    readonly toggleroleval : Locator;
+    readonly errorapproverrole : Locator;
+    readonly approvepolicytable : Locator;
+    readonly editapprovepolicytitle : Locator;
 
     constructor(page : Page){
         this.page                   = page;
@@ -145,7 +150,13 @@ export class bankUser{
         this.workflowNo             = page.locator("//div//label//span[normalize-space()='No']")
         this.workflow               = page.locator("//div[@class='addLevelBox withGrid']")
         this.togglebtn              = page.locator("//div[@class='button r']")
-        this.togglebtn              = page.locator("//div[@class='button r']//input")
+        this.togglebtntext          = page.locator("//div[@class='button r']//input")
+        this.toggleroleval          = page.locator("//div//div[@class='fs-8 fw-semibold']")
+        this.approvalrole           = page.locator("//div//select[@id='approverSelect']")
+        this.addapproverole         = page.locator("//button//div[text()=' Add Approver Role']")
+        this.errorapproverrole      = page.locator("//div[@class='addApproverBox']//p[@class='text-danger']")
+        this.approvepolicytable     = page.locator("//table[@class='table b-table b-table-stacked-md table-striped bg-white']//tbody//tr")
+        this.editapprovepolicytitle = page.locator("//h3[normalize-space()='Edit Approval Policy']")
     }
 
     async bankusermenu() : Promise<void>{
@@ -497,10 +508,47 @@ export class bankUser{
         await this.workflowNo.click();
         expect (this.workflow).not.toBeVisible();
     }
-    async validateaddapprovers() : Promise<void>{
-        await this.togglebtn.click();
 
+    async validateaddapprovers(approverole : string) : Promise<void>{
+        await this.togglebtn.click();
+        await this.togglebtn.click();
+        const togglebtnvalue = await this.togglebtntext.getAttribute('value')
+        console.log(togglebtnvalue)
+        await this.approvalrole.click();
+        await this.approvalrole.pressSequentially(approverole);
+        await this.addapproverole.click();
+        const toggleval = await this.toggleroleval.textContent();
+        console.log(toggleval)
+        expect (togglebtnvalue).toBe(toggleval?.trim())
+    } 
+    
+    async  erroraddapprovalrole(errormsg : string) : Promise<void>{
+        await this.addapproverole.click();
+        expect (this.errorapproverrole).toBeVisible();
+        const error = await this.errorapproverrole.textContent();
+        expect (error).toBe(errormsg)
+        await this.cancel.click();
+        expect (this.bankapprpolicytitle).toBeVisible();
     }
 
+    async editapprovalpolicy(functionalityval: string){
+        // expect (this.).toBeVisible();
+        await this.page.waitForTimeout(2000);
+        const rowcount = await this.approvepolicytable.count();
+        console.log(rowcount)
+        for (let i=1 ; i<= rowcount ; i++){
+            const functionlocator = `//table[@class="table b-table b-table-stacked-md table-striped bg-white"]//tbody//tr[${i}]//td[1]`
+            const functionality = await this.page.textContent(functionlocator)
+            console.log(functionality)
+            if (functionality == functionalityval){
+                const editpolicylocator = `//table//tbody//tr[${i}]//td[3]//div[1]//*[text()=' Edit ']`
+                await this.page.click(editpolicylocator) 
+                break
+            }
+            expect (this.editapprovepolicytitle).toBeVisible();
+        }        
+    }
+
+    
 }
     

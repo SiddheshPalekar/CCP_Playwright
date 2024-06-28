@@ -149,3 +149,41 @@ test(`${data13.TestCaseID} - ${data13.Description}`,{tag:"@TC_GP_BU13"}, async (
     await bankumenu.createpolicy(data13.Functionality, data13.Subfunctionality);
     await bankumenu.noworkflow(data13.AppPolicystatus)
 });
+
+const data14 = Excelutils.getTestData(SHEET,"TC_GP_BU14");
+test(`${data14.TestCaseID} - ${data14.Description}`,{tag:"@TC_GP_BU14"}, async ({}) => {
+    await login.login(data14.UserName, data14.Password, data14.Captcha);
+    await login.login_otp(data14.OTP);
+    await bankumenu.bankusermenu();
+    await bankumenu.bankapprovalpolicyclick();
+    await bankumenu.createpolicy(data14.Functionality, data14.Subfunctionality);
+    await bankumenu.validateaddapprovers(data14.ApproverRole);
+});
+
+const data15 = Excelutils.getTestData(SHEET,"TC_GP_BU15");
+test(`${data15.TestCaseID} - ${data15.Description}`,{tag:"@TC_GP_BU15"}, async ({}) => {
+    await login.login(data15.UserName, data15.Password, data15.Captcha);
+    await login.login_otp(data15.OTP);
+    await bankumenu.bankusermenu();
+    await bankumenu.bankapprovalpolicyclick();
+    await bankumenu.createpolicy(data15.Functionality, data15.Subfunctionality);
+    await bankumenu.erroraddapprovalrole(data15.Error)
+});
+
+const data16 = Excelutils.getTestData(SHEET,"TC_GP_BU16");
+test(`${data16.TestCaseID} - ${data16.Description}`,{tag:"@TC_GP_BU16"}, async ({}) => {
+    await login.login(data16.UserName, data16.Password, data16.Captcha);
+    await login.login_otp(data16.OTP);
+    await bankumenu.bankusermenu();
+    await bankumenu.bankapprovalpolicyclick();
+    await bankumenu.editapprovalpolicy(data16.Functionality);
+});
+
+const data17 = Excelutils.getTestData(SHEET,"TC_GP_BU17");
+test(`${data17.TestCaseID} - ${data17.Description}`,{tag:"@TC_GP_BU17"}, async ({}) => {
+    await login.login(data17.UserName, data17.Password, data17.Captcha);
+    await login.login_otp(data17.OTP);
+    await bankumenu.bankusermenu();
+    await bankumenu.bankapprovalpolicyclick();
+    await bankumenu.editapprovalpolicy(data17.Functionality);
+});
